@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
@@ -39,6 +40,7 @@ public class SchedulerConfiguration {
   }
 
   @Bean
+  @Primary
   public Scheduler withTaskPoolExecutorAndWithoutTimeout(SchedulerProperties schedulerProperties) {
     ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
     executor.setCorePoolSize(schedulerProperties.getCorePoolSize());
