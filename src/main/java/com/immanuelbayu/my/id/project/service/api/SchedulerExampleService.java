@@ -14,8 +14,6 @@ public interface SchedulerExampleService {
 
   Mono<Integer> testMonoWithSchedulerElastic();
 
-  Mono<Integer> testMonoWithSchedulerFromThreadPoolExecutor();
-
   Mono<Integer> testMonoWithSchedulerFromThreadPoolTaskExecutorWithoutTimeout();
 
   Mono<Integer> testMonoWithSchedulerFromThreadPoolTaskExecutorWithTimeout();

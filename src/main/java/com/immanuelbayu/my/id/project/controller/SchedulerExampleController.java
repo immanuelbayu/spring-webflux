@@ -39,11 +39,6 @@ public class SchedulerExampleController {
     return this.schedulerExampleService.testMonoWithSchedulerElastic();
   }
 
-  @GetMapping("test-mono-with-thread-pool-executor")
-  public Mono<Integer> testMonoWithSchedulerFromThreadPoolExecutor() {
-    return this.schedulerExampleService.testMonoWithSchedulerFromThreadPoolExecutor();
-  }
-
   @GetMapping("test-mono-with-task-pool-executor-without-timeout")
   public Mono<Integer> testMonoWithSchedulerFromThreadPoolTaskExecutorWithoutTimeout() {
     return this.schedulerExampleService.testMonoWithSchedulerFromThreadPoolTaskExecutorWithoutTimeout();
@@ -58,5 +53,4 @@ public class SchedulerExampleController {
   public Mono<Integer> testMonoWithWrongImplementationThreadPool() {
     return this.schedulerExampleService.testMonoWithWrongImplementationThreadPool();
   }
-
 }

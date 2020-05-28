@@ -12,9 +12,6 @@ import reactor.core.scheduler.Schedulers;
 public class SchedulerExampleServiceImpl implements SchedulerExampleService {
 
   @Autowired
-  Scheduler withPollExecutor;
-
-  @Autowired
   Scheduler withTaskPoolExecutorAndWithoutTimeout;
 
   @Autowired
@@ -60,15 +57,6 @@ public class SchedulerExampleServiceImpl implements SchedulerExampleService {
     Mono<Integer> mono = Mono.just(1)
         .flatMap(i -> Mono.just(i * 10))
         .subscribeOn(Schedulers.elastic());
-
-    return mono;
-  }
-
-  @Override
-  public Mono<Integer> testMonoWithSchedulerFromThreadPoolExecutor() {
-    Mono<Integer> mono = Mono.just(1)
-        .flatMap(i -> Mono.just(i * 10))
-        .subscribeOn(withPollExecutor);
 
     return mono;
   }
